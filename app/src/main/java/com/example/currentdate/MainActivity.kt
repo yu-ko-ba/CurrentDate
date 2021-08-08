@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.TextView
 import java.time.LocalDate
 import java.time.chrono.JapaneseDate
-import java.time.chrono.JapaneseEra
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         if (japaneseEra == "Reiwa") {
             japaneseEra = "令和"
         }
-        val weeks = arrayOf("日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日")
+        val weeks = arrayOf("日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日", "日曜日")
         val dateText = findViewById<TextView>(R.id.date_text)
         dateText.text = "${today.year}年(${japaneseEra}${japaneseToday.era.value}年) ${today.month.value}月${today.dayOfMonth}日 ${weeks[today.dayOfWeek.value]}"
     }
